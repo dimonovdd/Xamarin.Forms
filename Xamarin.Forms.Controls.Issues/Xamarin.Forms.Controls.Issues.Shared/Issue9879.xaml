@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:TestContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Controls"  
+             x:Class="Xamarin.Forms.Controls.Issues.Issue9879">
+
+    <CollectionView x:Name="TestCollection" BackgroundColor="Red">
+
+        <CollectionView.Header>
+            <StackLayout HeightRequest="600" BackgroundColor="Green">
+                <Label Text="Header Start"/>
+                <Entry BackgroundColor="Green" Placeholder="Entry" TextColor="Black" VerticalOptions="Start"/>
+                <Entry BackgroundColor="Blue" Placeholder="Entry" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+                <DatePicker BackgroundColor="Green" TextColor="Black" VerticalOptions="End"/>
+                <Label Text="Header End"/>
+            </StackLayout>
+        </CollectionView.Header>
+
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" SnapPointsType="None" SnapPointsAlignment="Start"/>
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout BackgroundColor="White" HeightRequest="90">
+                    <Label Text="{Binding .}" TextColor="Black" BackgroundColor="Transparent"/>
+                    <Entry BackgroundColor="Blue" Placeholder="Entry" TextColor="Black" VerticalOptions="Start"/>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+        <CollectionView.Footer>
+            <StackLayout HeightRequest="600" BackgroundColor="Yellow">
+                <Label Text="Header Start"/>
+                <Entry BackgroundColor="Green" Placeholder="Entry" TextColor="Black" VerticalOptions="Start"/>
+                <Entry BackgroundColor="Blue" Placeholder="Entry" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+                <Entry BackgroundColor="Green" Placeholder="Entry" TextColor="Black" VerticalOptions="End"/>
+                <Label Text="Footer End"/>
+            </StackLayout>
+        </CollectionView.Footer>
+
+    </CollectionView>
+
+</controls:TestContentPage>
